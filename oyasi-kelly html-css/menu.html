@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu | ByteBites Restaurant</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <i data-lucide="utensils-crossed"></i>
+                <span>ByteBites</span>
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="menu.html" class="nav-link active">Menu</a></li>
+                <li><a href="reservation.html" class="nav-link">Reservation</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li>
+                    <button class="cart-btn">
+                        <i data-lucide="shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </button>
+                </li>
+            </ul>
+
+            <button class="menu-toggle" id="menu-toggle">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </nav>
+
+    <main id="main-content" class="container section">
+        <!-- Specials Banner -->
+        <div class="specials-banner">
+          <h2>Chef's Special of the Week</h2>
+          <p>Get 20% off on all Seafood dishes every Friday!</p>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="search-container">
+            <i data-lucide="search" class="search-icon"></i>
+            <input type="text" class="search-input" placeholder="Search for food..." aria-label="Search for food">
+        </div>
+
+        <!-- Category Tabs -->
+        <div class="tabs">
+            <button class="tab active">Meals</button>
+            <button class="tab">Drinks</button>
+            <button class="tab">Snacks</button>
+            <button class="tab">Desserts</button>
+        </div>
+
+        <!-- Meals Section -->
+        <h2 class="category-title">Meals</h2>
+        <div class="food-grid">
+            <article class="food-card">
+                <div class="food-card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1577004686904-1a4f118acf61" alt="Grilled Salmon" class="food-card-img">
+                </div>
+                <div class="food-card-content">
+                    <h3>Grilled Salmon</h3>
+                    <p>Fresh Atlantic salmon with herb butter, roasted vegetables, and lemon</p>
+                    <div class="food-card-footer">
+                        <span class="food-card-price">$24.99</span>
+                        <button class="add-btn">
+                            <i data-lucide="shopping-cart"></i>
+                            Add
+                        </button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="food-card">
+                <div class="food-card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1712746785126-e9f28b5b3cc0" alt="Ribeye Steak" class="food-card-img">
+                </div>
+                <div class="food-card-content">
+                    <h3>Ribeye Steak</h3>
+                    <p>Premium 12oz ribeye steak with mashed potatoes and seasonal vegetables</p>
+                    <div class="food-card-footer">
+                        <span class="food-card-price">$32.99</span>
+                        <button class="add-btn">
+                            <i data-lucide="shopping-cart"></i>
+                            Add
+                        </button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="food-card">
+                <div class="food-card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1651949404339-9af9095d66dd" alt="Pasta Carbonara" class="food-card-img">
+                </div>
+                <div class="food-card-content">
+                    <h3>Pasta Carbonara</h3>
+                    <p>Classic Italian pasta with bacon, egg, parmesan, and black pepper</p>
+                    <div class="food-card-footer">
+                        <span class="food-card-price">$18.99</span>
+                        <button class="add-btn">
+                            <i data-lucide="shopping-cart"></i>
+                            Add
+                        </button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="food-card">
+                <div class="food-card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1723437531109-b291f063a386" alt="Gourmet Burger" class="food-card-img">
+                </div>
+                <div class="food-card-content">
+                    <h3>Gourmet Burger</h3>
+                    <p>Angus beef patty with cheddar, bacon, lettuce, tomato, and crispy fries</p>
+                    <div class="food-card-footer">
+                        <span class="food-card-price">$16.99</span>
+                        <button class="add-btn">
+                            <i data-lucide="shopping-cart"></i>
+                            Add
+                        </button>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <!-- Drinks Section (Sample) -->
+        <h2 class="category-title">Drinks</h2>
+        <div class="food-grid">
+            <article class="food-card">
+                <div class="food-card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1724155331840-263a0454d8bb" alt="Mojito" class="food-card-img">
+                </div>
+                <div class="food-card-content">
+                    <h3>Mojito</h3>
+                    <p>Refreshing mint and lime cocktail with white rum and soda</p>
+                    <div class="food-card-footer">
+                        <span class="food-card-price">$9.99</span>
+                        <button class="add-btn">
+                            <i data-lucide="shopping-cart"></i>
+                            Add
+                        </button>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div>
+                <div class="footer-logo">
+                    <i data-lucide="utensils-crossed"></i>
+                    <span>ByteBites</span>
+                </div>
+                <p class="footer-desc">Experience the finest culinary delights with fresh ingredients and authentic flavors.</p>
+            </div>
+
+            <div>
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="reservation.html">Reservation</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>Contact</h3>
+                <ul class="footer-contact">
+                    <li>123 Gourmet Street</li>
+                    <li>New York, NY 10001</li>
+                    <li>Phone: (555) 123-4567</li>
+                    <li>Email: info@ByteBites.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 ByteBites Restaurant. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = menuToggle.querySelector('i');
+            const isMenuOpen = navLinks.classList.contains('active');
+            icon.setAttribute('data-lucide', isMenuOpen ? 'x' : 'menu');
+            lucide.createIcons();
+        });
+    </script>
+</body>
+</html>

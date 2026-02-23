@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation | ByteBites</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <i data-lucide="utensils-crossed"></i>
+                <span>ByteBites</span>
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="menu.html" class="nav-link">Menu</a></li>
+                <li><a href="reservation.html" class="nav-link active">Reservation</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li>
+                    <button class="cart-btn">
+                        <i data-lucide="shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </button>
+                </li>
+            </ul>
+
+            <button class="menu-toggle" id="menu-toggle">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </nav>
+
+    <main id="main-content" class="container section">
+        <div class="section-header text-center">
+            <h2 class="section-title">Reserve Your Table</h2>
+            <p class="section-subtitle">Book a table and enjoy an unforgettable dining experience</p>
+        </div>
+
+        <div class="reservation-container">
+            <div class="card" style="padding: 2.5rem;">
+                <form action="#" class="reservation-form">
+                    <div class="form-group-row">
+                        <div class="form-group">
+                            <label for="reservation-date" class="form-label">
+                                <i data-lucide="calendar" style="width: 1rem; height: 1rem; vertical-align: middle; margin-right: 0.5rem; color: var(--primary);"></i>
+                                Date *
+                            </label>
+                            <input type="date" id="reservation-date" required class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <label for="reservation-time" class="form-label">
+                                <i data-lucide="clock" style="width: 1rem; height: 1rem; vertical-align: middle; margin-right: 0.5rem; color: var(--primary);"></i>
+                                Time *
+                            </label>
+                            <select id="reservation-time" required class="form-input">
+                                <option value="" disabled selected>Select time</option>
+                                <option>11:00 AM</option>
+                                <option>11:30 AM</option>
+                                <option>12:00 PM</option>
+                                <option>12:30 PM</option>
+                                <option>1:00 PM</option>
+                                <option>1:30 PM</option>
+                                <option>2:00 PM</option>
+                                <option>5:00 PM</option>
+                                <option>5:30 PM</option>
+                                <option>6:00 PM</option>
+                                <option>6:30 PM</option>
+                                <option>7:00 PM</option>
+                                <option>7:30 PM</option>
+                                <option>8:00 PM</option>
+                                <option>8:30 PM</option>
+                                <option>9:00 PM</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reservation-guests" class="form-label">
+                            <i data-lucide="users" style="width: 1rem; height: 1rem; vertical-align: middle; margin-right: 0.5rem; color: var(--primary);"></i>
+                            Number of Guests *
+                        </label>
+                        <select id="reservation-guests" required class="form-input">
+                            <option value="1">1 Guest</option>
+                            <option value="2" selected>2 Guests</option>
+                            <option value="3">3 Guests</option>
+                            <option value="4">4 Guests</option>
+                            <option value="5">5 Guests</option>
+                            <option value="6">6 Guests</option>
+                            <option value="7">7 Guests</option>
+                            <option value="8">8 Guests</option>
+                            <option value="9">9 Guests</option>
+                            <option value="10">10 Guests</option>
+                        </select>
+                    </div>
+
+                    <div style="border-top: 1px solid #eee; padding-top: 1.5rem; margin-top: 1.5rem;">
+                        <h3 style="margin-bottom: 1rem; font-size: 1.125rem;">Contact Information</h3>
+                        <div class="form-group">
+                            <label for="reservation-name" class="form-label">Full Name *</label>
+                            <input type="text" id="reservation-name" placeholder="John Doe" required class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <label for="reservation-phone" class="form-label">Phone Number *</label>
+                            <input type="tel" id="reservation-phone" placeholder="(555) 123-4567" required class="form-input">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1rem; border-radius: 9999px; font-size: 1.125rem; margin-top: 1.5rem;">Confirm Reservation</button>
+                </form>
+            </div>
+
+            <div class="reservation-features">
+                <div class="reservation-feature-card">
+                    <i data-lucide="calendar"></i>
+                    <h4>Flexible Booking</h4>
+                    <p>Book up to 30 days in advance</p>
+                </div>
+                <div class="reservation-feature-card">
+                    <i data-lucide="clock"></i>
+                    <h4>Free Cancellation</h4>
+                    <p>Cancel up to 2 hours before</p>
+                </div>
+                <div class="reservation-feature-card">
+                    <i data-lucide="users"></i>
+                    <h4>Group Friendly</h4>
+                    <p>Tables for up to 10 guests</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div>
+                <div class="footer-logo">
+                    <i data-lucide="utensils-crossed"></i>
+                    <span>ByteBites</span>
+                </div>
+                <p class="footer-desc">Experience the finest culinary delights with fresh ingredients and authentic flavors.</p>
+            </div>
+
+            <div>
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="reservation.html">Reservation</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>Contact</h3>
+                <ul class="footer-contact">
+                    <li>123 Gourmet Street</li>
+                    <li>New York, NY 10001</li>
+                    <li>Phone: (555) 123-4567</li>
+                    <li>Email: info@ByteBites.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 ByteBites Restaurant. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = menuToggle.querySelector('i');
+            const isMenuOpen = navLinks.classList.contains('active');
+            icon.setAttribute('data-lucide', isMenuOpen ? 'x' : 'menu');
+            lucide.createIcons();
+        });
+    </script>
+</body>
+</html>
