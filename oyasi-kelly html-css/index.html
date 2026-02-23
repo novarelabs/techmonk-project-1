@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ByteBites | Gourmet Restaurant</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <i data-lucide="utensils-crossed"></i>
+                <span>ByteBites</span>
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="menu.html" class="nav-link">Menu</a></li>
+                <li><a href="reservation.html" class="nav-link">Reservation</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li>
+                    <button class="cart-btn">
+                        <i data-lucide="shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </button>
+                </li>
+            </ul>
+
+            <button class="menu-toggle" id="menu-toggle">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </nav>
+
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <img src="https://images.unsplash.com/photo-1643757343278-5d50309dfa44?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxnb3VybWV0JTIwcmVzdGF1cmFudCUyMGZvb2QlMjBwbGF0dGVyfGVufDF8fHx8MTc3MTc4OTU5MHww&ixlib=rb-4.1.0&q=80&w=1080" alt="Gourmet food" class="hero-img">
+            <div class="hero-overlay">
+                <div class="hero-content">
+                    <h1>Welcome to ByteBites</h1>
+                    <p>Experience culinary excellence with our chef-crafted dishes made from the finest ingredients</p>
+                    <div class="hero-btns">
+                        <a href="menu.html" class="btn btn-primary">Order Now</a>
+                        <a href="reservation.html" class="btn btn-outline">Reserve Table</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Specials Section -->
+        <section class="section container">
+            <div class="section-header">
+                <h2 class="section-title">Today's Specials</h2>
+                <p class="section-subtitle">Discover our chef's favorite picks for you</p>
+            </div>
+
+            <div class="food-grid">
+                <!-- Food Card 1 -->
+                <article class="food-card">
+                    <div class="food-card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1577004686904-1a4f118acf61?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxncmlsbGVkJTIwc2FsbW9uJTIwZGlzaCUyMGVsZWdhbnR8ZW58MXx8fHwxNzcxODAyNDQ4fDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Grilled Salmon" class="food-card-img">
+                    </div>
+                    <div class="food-card-content">
+                        <h3>Grilled Salmon</h3>
+                        <p>Fresh Atlantic salmon with herb butter, roasted vegetables, and lemon</p>
+                        <div class="food-card-footer">
+                            <span class="food-card-price">$24.99</span>
+                            <button class="add-btn">
+                                <i data-lucide="shopping-cart"></i>
+                                Add
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Food Card 2 -->
+                <article class="food-card">
+                    <div class="food-card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1712746785126-e9f28b5b3cc0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdGVhayUyMGRpbm5lciUyMHJlc3RhdXJhbnR8ZW58MXx8fHwxNzcxODAyNDQ5fDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Ribeye Steak" class="food-card-img">
+                    </div>
+                    <div class="food-card-content">
+                        <h3>Ribeye Steak</h3>
+                        <p>Premium 12oz ribeye steak with mashed potatoes and seasonal vegetables</p>
+                        <div class="food-card-footer">
+                            <span class="food-card-price">$32.99</span>
+                            <button class="add-btn">
+                                <i data-lucide="shopping-cart"></i>
+                                Add
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Food Card 3 -->
+                <article class="food-card">
+                    <div class="food-card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1723437531109-b291f063a386?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxidXJnZXIlMjBmcmllcyUyMGFtZXJpY2FuJTIwZm9vZHxlbnwxfHx8fDE3NzE3NTk0NTZ8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Gourmet Burger" class="food-card-img">
+                    </div>
+                    <div class="food-card-content">
+                        <h3>Gourmet Burger</h3>
+                        <p>Angus beef patty with cheddar, bacon, lettuce, tomato, and crispy fries</p>
+                        <div class="food-card-footer">
+                            <span class="food-card-price">$16.99</span>
+                            <button class="add-btn">
+                                <i data-lucide="shopping-cart"></i>
+                                Add
+                            </button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="menu.html" class="btn btn-primary">View Full Menu</a>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="section container testimonials">
+            <div class="section-header">
+              <h2 class="section-title">What Our Guests Say</h2>
+              <p class="section-subtitle">Real experiences from our valued customers</p>
+            </div>
+            <div class="testimonials-grid">
+              <div class="testimonial-card">
+                <p class="testimonial-text">"The best salmon I've ever had. The herb butter was perfection!"</p>
+                <p class="testimonial-author">- Sarah Johnson</p>
+              </div>
+              <div class="testimonial-card">
+                <p class="testimonial-text">"Beautiful atmosphere and even better food. A must-visit!"</p>
+                <p class="testimonial-author">- Michael Chen</p>
+              </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features section">
+            <div class="container features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i data-lucide="clock"></i>
+                    </div>
+                    <h3>Fast Delivery</h3>
+                    <p>Order online and get your food delivered in 30 minutes or less</p>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i data-lucide="check-circle-2"></i>
+                    </div>
+                    <h3>Quality Food</h3>
+                    <p>Fresh ingredients sourced daily from local farms</p>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i data-lucide="dollar-sign"></i>
+                    </div>
+                    <h3>Best Prices</h3>
+                    <p>Affordable pricing without compromising on quality</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div>
+                <div class="footer-logo">
+                    <i data-lucide="utensils-crossed"></i>
+                    <span>ByteBites</span>
+                </div>
+                <p class="footer-desc">Experience the finest culinary delights with fresh ingredients and authentic flavors.</p>
+            </div>
+
+            <div>
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="reservation.html">Reservation</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>Contact</h3>
+                <ul class="footer-contact">
+                    <li>123 Gourmet Street</li>
+                    <li>New York, NY 10001</li>
+                    <li>Phone: (555) 123-4567</li>
+                    <li>Email: info@ByteBites.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 ByteBites Restaurant. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = menuToggle.querySelector('i');
+            const isMenuOpen = navLinks.classList.contains('active');
+            icon.setAttribute('data-lucide', isMenuOpen ? 'x' : 'menu');
+            lucide.createIcons();
+        });
+    </script>
+</body>
+</html>
