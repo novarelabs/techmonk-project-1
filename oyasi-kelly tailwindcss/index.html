@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ByteBites | Gourmet Restaurant</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            DEFAULT: '#b91c1c',
+                            hover: '#991b1b',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-neutral-50 text-gray-900 font-sans">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-[100] focus:bg-primary focus:text-white focus:p-4">Skip to main content</a>
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
+            <a href="index.html" class="flex items-center space-x-2 text-2xl font-bold text-primary">
+                <i data-lucide="utensils-crossed"></i>
+                <span>ByteBites</span>
+            </a>
+            
+            <ul class="hidden md:flex items-center space-x-8">
+                <li><a href="index.html" class="text-primary font-medium transition-colors">Home</a></li>
+                <li><a href="menu.html" class="text-gray-600 hover:text-primary font-medium transition-colors">Menu</a></li>
+                <li><a href="reservation.html" class="text-gray-600 hover:text-primary font-medium transition-colors">Reservation</a></li>
+                <li><a href="contact.html" class="text-gray-600 hover:text-primary font-medium transition-colors">Contact</a></li>
+                <li>
+                    <button class="relative p-2 text-gray-600 hover:text-primary transition-colors focus:ring-2 focus:ring-primary/20 focus:outline-none rounded-lg">
+                        <i data-lucide="shopping-cart" class="w-6 h-6"></i>
+                        <span class="absolute top-0 right-0 bg-primary text-white text-[10px] w-5 h-5 rounded-full flex items-center justify-center">0</span>
+                    </button>
+                </li>
+            </ul>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-toggle" class="md:hidden p-2 text-gray-600 hover:text-primary">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-4 py-6 space-y-4 shadow-lg absolute w-full left-0">
+            <a href="index.html" class="block text-primary font-medium">Home</a>
+            <a href="menu.html" class="block text-gray-600 hover:text-primary font-medium">Menu</a>
+            <a href="reservation.html" class="block text-gray-600 hover:text-primary font-medium">Reservation</a>
+            <a href="contact.html" class="block text-gray-600 hover:text-primary font-medium">Contact</a>
+            <div class="pt-4 border-t border-gray-50">
+                <a href="#" class="flex items-center space-x-2 text-gray-600">
+                    <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                    <span>Cart (0)</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative h-[500px] md:h-[600px] overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1643757343278-5d50309dfa44?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxnb3VybWV0JTIwcmVzdGF1cmFudCUyMGZvb2QlMjBwbGF0dGVyfGVufDF8fHx8MTc3MTc4OTU5MHww&ixlib=rb-4.1.0&q=80&w=1080" alt="Gourmet food" class="w-full h-full object-cover brightness-75" loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/60 flex items-center justify-center text-center text-white px-4">
+                <div class="max-w-3xl">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-4">Welcome to ByteBites</h1>
+                    <p class="text-lg md:text-xl mb-8 text-gray-200">Experience culinary excellence with our chef-crafted dishes made from the finest ingredients</p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                        <a href="menu.html" class="inline-block bg-primary hover:bg-primary-hover text-white px-8 py-3 rounded-full font-semibold shadow-lg transition-colors focus:ring-2 focus:ring-primary/50 focus:outline-none">Order Now</a>
+                        <a href="reservation.html" class="inline-block bg-white/10 backdrop-blur-sm border-2 border-white text-white hover:bg-white hover:text-primary px-8 py-3 rounded-full font-semibold shadow-lg transition-colors focus:ring-2 focus:ring-white/50 focus:outline-none">Reserve Table</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Specials Section -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-3">Today's Specials</h2>
+                <p class="text-lg text-gray-600">Discover our chef's favorite picks for you</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Food Card 1 -->
+                <article class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow cursor-pointer group">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1577004686904-1a4f118acf61" alt="Grilled Salmon" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" loading="lazy">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Grilled Salmon</h3>
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-2">Fresh Atlantic salmon with herb butter, roasted vegetables, and lemon</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl font-bold text-primary">$24.99</span>
+                            <button class="bg-primary hover:bg-primary-hover text-white px-4 py-2 rounded-full text-sm font-semibold flex items-center transition-colors focus:ring-2 focus:ring-primary/50 focus:outline-none">
+                                <i data-lucide="shopping-cart" class="w-4 h-4 mr-1"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Food Card 2 -->
+                <article class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow cursor-pointer group">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1712746785126-e9f28b5b3cc0" alt="Ribeye Steak" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" loading="lazy">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Ribeye Steak</h3>
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-2">Premium 12oz ribeye steak with mashed potatoes and seasonal vegetables</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl font-bold text-primary">$32.99</span>
+                            <button class="bg-primary hover:bg-primary-hover text-white px-4 py-2 rounded-full text-sm font-semibold flex items-center transition-colors">
+                                <i data-lucide="shopping-cart" class="w-4 h-4 mr-1"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Food Card 3 -->
+                <article class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow cursor-pointer group">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1723437531109-b291f063a386" alt="Gourmet Burger" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" loading="lazy">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Gourmet Burger</h3>
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-2">Angus beef patty with cheddar, bacon, lettuce, tomato, and crispy fries</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl font-bold text-primary">$16.99</span>
+                            <button class="bg-primary hover:bg-primary-hover text-white px-4 py-2 rounded-full text-sm font-semibold flex items-center transition-colors">
+                                <i data-lucide="shopping-cart" class="w-4 h-4 mr-1"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="menu.html" class="inline-block bg-primary hover:bg-primary-hover text-white px-8 py-3 rounded-full font-semibold transition-colors focus:ring-2 focus:ring-primary/50 focus:outline-none">View Full Menu</a>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="bg-white py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold mb-3">What Our Guests Say</h2>
+                    <p class="text-lg text-gray-600">Real experiences from our valued customers</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="p-8 bg-red-50 rounded-2xl relative">
+                        <p class="italic text-gray-700 mb-4 text-lg">"The best salmon I've ever had. The herb butter was perfection!"</p>
+                        <p class="font-bold text-gray-900">- Sarah Johnson</p>
+                    </div>
+                    <div class="p-8 bg-red-50 rounded-2xl relative">
+                        <p class="italic text-gray-700 mb-4 text-lg">"Beautiful atmosphere and even better food. A must-visit!"</p>
+                        <p class="font-bold text-gray-900">- Michael Chen</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="bg-red-50 py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+                    <div>
+                        <div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i data-lucide="clock" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Fast Delivery</h3>
+                        <p class="text-gray-600">Order online and get your food delivered in 30 minutes or less</p>
+                    </div>
+                    <div>
+                        <div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i data-lucide="check-circle-2" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Quality Food</h3>
+                        <p class="text-gray-600">Fresh ingredients sourced daily from local farms</p>
+                    </div>
+                    <div>
+                        <div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i data-lucide="dollar-sign" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Best Prices</h3>
+                        <p class="text-gray-600">Affordable pricing without compromising on quality</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div>
+                <a href="index.html" class="flex items-center space-x-2 text-2xl font-bold text-red-500 mb-6">
+                    <i data-lucide="utensils-crossed"></i>
+                    <span>ByteBites</span>
+                </a>
+                <p class="text-gray-400">Experience the finest culinary delights with fresh ingredients and authentic flavors.</p>
+            </div>
+
+            <div>
+                <h3 class="text-xl font-bold mb-6">Quick Links</h3>
+                <ul class="space-y-4 text-gray-400">
+                    <li><a href="index.html" class="hover:text-white transition-colors">Home</a></li>
+                    <li><a href="menu.html" class="hover:text-white transition-colors">Menu</a></li>
+                    <li><a href="reservation.html" class="hover:text-white transition-colors">Reservation</a></li>
+                    <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="text-xl font-bold mb-6">Contact</h3>
+                <ul class="space-y-4 text-gray-400">
+                    <li class="flex items-center"><i data-lucide="map-pin" class="w-5 h-5 mr-3 text-red-500"></i> 123 Gourmet Street, NY 10001</li>
+                    <li class="flex items-center"><i data-lucide="phone" class="w-5 h-5 mr-3 text-red-500"></i> (555) 123-4567</li>
+                    <li class="flex items-center"><i data-lucide="mail" class="w-5 h-5 mr-3 text-red-500"></i> info@ByteBites.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 pt-8 border-t border-gray-800 text-center text-gray-400">
+            <p>&copy; 2026 ByteBites Restaurant. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const icon = menuToggle.querySelector('i');
+            const isMenuOpen = !mobileMenu.classList.contains('hidden');
+            icon.setAttribute('data-lucide', isMenuOpen ? 'x' : 'menu');
+            lucide.createIcons();
+        });
+    </script>
+</body>
+</html>

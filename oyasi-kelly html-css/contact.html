@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & Reservations | ByteBites</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <i data-lucide="utensils-crossed"></i>
+                <span>ByteBites</span>
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="menu.html" class="nav-link">Menu</a></li>
+                <li><a href="reservation.html" class="nav-link">Reservation</a></li>
+                <li><a href="contact.html" class="nav-link active">Contact</a></li>
+                <li>
+                    <button class="cart-btn">
+                        <i data-lucide="shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </button>
+                </li>
+            </ul>
+
+            <button class="menu-toggle" id="menu-toggle">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </nav>
+
+    <main id="main-content" class="container section">
+        <div class="section-header text-center">
+            <h2 class="section-title">Contact Us</h2>
+            <p class="section-subtitle">We'd love to hear from you. Get in touch with us!</p>
+        </div>
+
+        <div class="contact-grid">
+            <!-- Contact Information Cards -->
+            <div class="contact-card-list">
+                <!-- Phone -->
+                <article class="contact-info-card">
+                    <div class="icon-wrapper">
+                        <i data-lucide="phone"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3>Phone</h3>
+                        <p>Give us a call for reservations or inquiries</p>
+                        <a href="tel:+15551234567" class="btn btn-primary" style="border-radius: 9999px;">Call (555) 123-4567</a>
+                    </div>
+                </article>
+
+                <!-- Email -->
+                <article class="contact-info-card">
+                    <div class="icon-wrapper">
+                        <i data-lucide="mail"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3>Email</h3>
+                        <p>Send us an email anytime</p>
+                        <a href="mailto:info@ByteBites.com" style="color: var(--primary); font-weight: 500;">info@ByteBites.com</a>
+                    </div>
+                </article>
+
+                <!-- Address -->
+                <article class="contact-info-card">
+                    <div class="icon-wrapper">
+                        <i data-lucide="map-pin"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3>Address</h3>
+                        <p>123 Gourmet Street<br>New York, NY 10001<br>United States</p>
+                    </div>
+                </article>
+
+                <!-- Opening Hours -->
+                <article class="contact-info-card">
+                    <div class="icon-wrapper">
+                        <i data-lucide="clock"></i>
+                    </div>
+                    <div class="info-content" style="flex: 1;">
+                        <h3>Opening Hours</h3>
+                        <div class="hours-grid">
+                            <div class="hours-row">
+                                <span>Monday - Friday</span>
+                                <span>11:00 AM - 10:00 PM</span>
+                            </div>
+                            <div class="hours-row">
+                                <span>Saturday</span>
+                                <span>10:00 AM - 11:00 PM</span>
+                            </div>
+                            <div class="hours-row">
+                                <span>Sunday</span>
+                                <span>10:00 AM - 9:00 PM</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Map Section -->
+            <div class="map-container">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.15830869428!2d-74.11976401497949!3d40.69766374859258!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY!5e0!3m2!1sen!2sus!4v1645564516889!5m2!1sen!2sus"
+                    width="100%"
+                    height="100%"
+                    style="border: 0; min-height: 400px;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    title="Restaurant Location"
+                ></iframe>
+            </div>
+        </div>
+
+        <!-- Social Media Section -->
+        <section class="social-cta">
+            <h2>Follow Us on Social Media</h2>
+            <p>Stay updated with our latest dishes, special offers, and events</p>
+            <div class="social-btns">
+                <button class="btn-social">Facebook</button>
+                <button class="btn-social">Instagram</button>
+                <button class="btn-social">Twitter</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div>
+                <div class="footer-logo">
+                    <i data-lucide="utensils-crossed"></i>
+                    <span>ByteBites</span>
+                </div>
+                <p class="footer-desc">Experience the finest culinary delights with fresh ingredients and authentic flavors.</p>
+            </div>
+
+            <div>
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="reservation.html">Reservation</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>Contact</h3>
+                <ul class="footer-contact">
+                    <li>123 Gourmet Street</li>
+                    <li>New York, NY 10001</li>
+                    <li>Phone: (555) 123-4567</li>
+                    <li>Email: info@ByteBites.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 ByteBites Restaurant. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = menuToggle.querySelector('i');
+            const isMenuOpen = navLinks.classList.contains('active');
+            icon.setAttribute('data-lucide', isMenuOpen ? 'x' : 'menu');
+            lucide.createIcons();
+        });
+    </script>
+</body>
+</html>
