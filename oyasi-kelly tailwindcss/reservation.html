@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation | ByteBites</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            DEFAULT: '#b91c1c',
+                            hover: '#991b1b',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-neutral-50 text-gray-900 font-sans">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-[100] focus:bg-primary focus:text-white focus:p-4">Skip to main content</a>
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
+            <a href="index.html" class="flex items-center space-x-2 text-2xl font-bold text-primary">
+                <i data-lucide="utensils-crossed"></i>
+                <span>ByteBites</span>
+            </a>
+            
+            <ul class="hidden md:flex items-center space-x-8">
+                <li><a href="index.html" class="text-gray-600 hover:text-primary font-medium transition-colors">Home</a></li>
+                <li><a href="menu.html" class="text-gray-600 hover:text-primary font-medium transition-colors">Menu</a></li>
+                <li><a href="reservation.html" class="text-primary font-medium transition-colors">Reservation</a></li>
+                <li><a href="contact.html" class="text-gray-600 hover:text-primary font-medium transition-colors">Contact</a></li>
+                <li>
+                    <button class="relative p-2 text-gray-600 hover:text-primary transition-colors">
+                        <i data-lucide="shopping-cart" class="w-6 h-6"></i>
+                        <span class="absolute top-0 right-0 bg-primary text-white text-[10px] w-5 h-5 rounded-full flex items-center justify-center">0</span>
+                    </button>
+                </li>
+            </ul>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-toggle" class="md:hidden p-2 text-gray-600 hover:text-primary">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-4 py-6 space-y-4 shadow-lg absolute w-full left-0 z-40">
+            <a href="index.html" class="block text-gray-600 hover:text-primary font-medium">Home</a>
+            <a href="menu.html" class="block text-gray-600 hover:text-primary font-medium">Menu</a>
+            <a href="reservation.html" class="block text-primary font-medium">Reservation</a>
+            <a href="contact.html" class="block text-gray-600 hover:text-primary font-medium">Contact</a>
+            <div class="pt-4 border-t border-gray-50">
+                <a href="#" class="flex items-center space-x-2 text-gray-600">
+                    <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                    <span>Cart (0)</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main-content" class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="text-center mb-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-3">Reserve Your Table</h1>
+            <p class="text-lg text-gray-600">Book a table and enjoy an unforgettable dining experience</p>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8">
+            <form action="#" class="space-y-6">
+                <!-- Date and Time Section -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="flex items-center text-sm font-medium text-gray-700 mb-2">
+                            <i data-lucide="calendar" class="h-4 w-4 mr-2 text-red-700"></i>
+                            Date *
+                        </label>
+                        <input type="date" required class="w-full px-4 py-2 rounded-lg border border-gray-200 focus:ring-2 focus:ring-red-500/10 focus:border-red-500 outline-none transition-all">
+                    </div>
+
+                    <div>
+                        <label class="flex items-center text-sm font-medium text-gray-700 mb-2">
+                            <i data-lucide="clock" class="h-4 w-4 mr-2 text-red-700"></i>
+                            Time *
+                        </label>
+                        <select required class="w-full px-4 py-2 rounded-lg border border-gray-200 focus:ring-2 focus:ring-red-500/10 focus:border-red-500 outline-none transition-all bg-white">
+                            <option value="" disabled selected>Select time</option>
+                            <option>11:00 AM</option>
+                            <option>11:30 AM</option>
+                            <option>12:00 PM</option>
+                            <option>12:30 PM</option>
+                            <option>1:00 PM</option>
+                            <option>1:30 PM</option>
+                            <option>2:00 PM</option>
+                            <option>5:00 PM</option>
+                            <option>5:30 PM</option>
+                            <option>6:00 PM</option>
+                            <option>6:30 PM</option>
+                            <option>7:00 PM</option>
+                            <option>7:30 PM</option>
+                            <option>8:00 PM</option>
+                            <option>8:30 PM</option>
+                            <option>9:00 PM</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Number of Guests -->
+                <div>
+                    <label class="flex items-center text-sm font-medium text-gray-700 mb-2">
+                        <i data-lucide="users" class="h-4 w-4 mr-2 text-red-700"></i>
+                        Number of Guests *
+                    </label>
+                    <select required class="w-full px-4 py-2 rounded-lg border border-gray-200 focus:ring-2 focus:ring-red-500/10 focus:border-red-500 outline-none transition-all bg-white">
+                        <option value="1">1 Guest</option>
+                        <option value="2" selected>2 Guests</option>
+                        <option value="3">3 Guests</option>
+                        <option value="4">4 Guests</option>
+                        <option value="5">5 Guests</option>
+                        <option value="6">6 Guests</option>
+                        <option value="7">7 Guests</option>
+                        <option value="8">8 Guests</option>
+                        <option value="9">9 Guests</option>
+                        <option value="10">10 Guests</option>
+                    </select>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="border-t border-gray-100 pt-6">
+                    <h3 class="text-lg font-semibold mb-4">Contact Information</h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="tw-full-name" class="block text-sm font-medium text-gray-700 mb-1">Full Name *</label>
+                            <input type="text" id="tw-full-name" placeholder="John Doe" required class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all">
+                        </div>
+
+                        <div>
+                            <label for="tw-phone-number" class="block text-sm font-medium text-gray-700 mb-1">Phone Number *</label>
+                            <input type="tel" id="tw-phone-number" placeholder="(555) 123-4567" required class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="w-full bg-red-700 hover:bg-red-800 text-white py-4 rounded-full text-lg font-bold shadow-lg shadow-red-900/10 transition-all transform active:scale-[0.98] mt-8">
+                    Confirm Reservation
+                </button>
+            </form>
+        </div>
+
+        <!-- Info Section -->
+        <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+            <div class="bg-red-50 rounded-xl p-6">
+                <i data-lucide="calendar" class="h-10 w-10 text-red-700 mx-auto mb-4"></i>
+                <h4 class="font-bold mb-2">Flexible Booking</h4>
+                <p class="text-sm text-gray-600">Book up to 30 days in advance</p>
+            </div>
+            <div class="bg-red-50 rounded-xl p-6">
+                <i data-lucide="clock" class="h-10 w-10 text-red-700 mx-auto mb-4"></i>
+                <h4 class="font-bold mb-2">Free Cancellation</h4>
+                <p class="text-sm text-gray-600">Cancel up to 2 hours before</p>
+            </div>
+            <div class="bg-red-50 rounded-xl p-6">
+                <i data-lucide="users" class="h-10 w-10 text-red-700 mx-auto mb-4"></i>
+                <h4 class="font-bold mb-2">Group Friendly</h4>
+                <p class="text-sm text-gray-600">Tables for up to 10 guests</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div>
+                <a href="index.html" class="flex items-center space-x-2 text-2xl font-bold text-red-500 mb-6">
+                    <i data-lucide="utensils-crossed"></i>
+                    <span>ByteBites</span>
+                </a>
+                <p class="text-gray-400">Experience the finest culinary delights with fresh ingredients and authentic flavors.</p>
+            </div>
+
+            <div>
+                <h3 class="text-xl font-bold mb-6">Quick Links</h3>
+                <ul class="space-y-4 text-gray-400">
+                    <li><a href="index.html" class="hover:text-white transition-colors">Home</a></li>
+                    <li><a href="menu.html" class="hover:text-white transition-colors">Menu</a></li>
+                    <li><a href="reservation.html" class="hover:text-white transition-colors">Reservation</a></li>
+                    <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>Contact</h3>
+                <ul class="space-y-4 text-gray-400">
+                    <li class="flex items-center"><i data-lucide="map-pin" class="w-5 h-5 mr-3 text-red-500"></i> 123 Gourmet Street, NY 10001</li>
+                    <li class="flex items-center"><i data-lucide="phone" class="w-5 h-5 mr-3 text-red-500"></i> (555) 123-4567</li>
+                    <li class="flex items-center"><i data-lucide="mail" class="w-5 h-5 mr-3 text-red-500"></i> info@ByteBites.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 pt-8 border-t border-gray-800 text-center text-gray-400">
+            <p>&copy; 2026 ByteBites Restaurant. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const icon = menuToggle.querySelector('i');
+            const isMenuOpen = !mobileMenu.classList.contains('hidden');
+            icon.setAttribute('data-lucide', isMenuOpen ? 'x' : 'menu');
+            lucide.createIcons();
+        });
+    </script>
+</body>
+</html>
