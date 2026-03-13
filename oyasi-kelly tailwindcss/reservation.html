@@ -1,15 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reservation | ByteBites</title>
+    <!-- Dark Mode Initializer -->
+    <script>
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark')
+        } else {
+            document.documentElement.classList.remove('dark')
+        }
+    </script>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
@@ -23,43 +32,65 @@
         }
     </script>
 </head>
-<body class="bg-neutral-50 text-gray-900 font-sans">
+<body class="bg-neutral-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-sans transition-colors duration-300">
     <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-[100] focus:bg-primary focus:text-white focus:p-4">Skip to main content</a>
     <!-- Navigation -->
-    <nav class="bg-white shadow-sm sticky top-0 z-50">
+    <nav class="bg-white dark:bg-gray-800 shadow-sm sticky top-0 z-50 transition-colors duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
-            <a href="index.html" class="flex items-center space-x-2 text-2xl font-bold text-primary">
+            <a href="index.html" class="flex items-center space-x-2 text-2xl font-bold text-primary dark:text-red-500">
                 <i data-lucide="utensils-crossed"></i>
                 <span>ByteBites</span>
             </a>
             
             <ul class="hidden md:flex items-center space-x-8">
-                <li><a href="index.html" class="text-gray-600 hover:text-primary font-medium transition-colors">Home</a></li>
-                <li><a href="menu.html" class="text-gray-600 hover:text-primary font-medium transition-colors">Menu</a></li>
+                <li><a href="index.html" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary font-medium transition-colors">Home</a></li>
+                <li><a href="menu.html" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary font-medium transition-colors">Menu</a></li>
                 <li><a href="reservation.html" class="text-primary font-medium transition-colors">Reservation</a></li>
-                <li><a href="contact.html" class="text-gray-600 hover:text-primary font-medium transition-colors">Contact</a></li>
-                <li>
-                    <button class="relative p-2 text-gray-600 hover:text-primary transition-colors">
+                <li><a href="contact.html" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary font-medium transition-colors">Contact</a></li>
+                <li class="flex items-center space-x-4">
+                    <!-- Global Search Desktop -->
+                    <form action="menu.html" method="GET" class="relative hidden lg:block">
+                        <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-400 w-4 h-4"></i>
+                        <input type="text" name="search" placeholder="Search..." class="w-48 pl-9 pr-4 py-1.5 text-sm rounded-full bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-gray-100 border border-transparent focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all">
+                    </form>
+                    <button class="relative p-2 text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors focus:ring-2 focus:ring-primary/20 focus:outline-none rounded-lg">
                         <i data-lucide="shopping-cart" class="w-6 h-6"></i>
                         <span class="absolute top-0 right-0 bg-primary text-white text-[10px] w-5 h-5 rounded-full flex items-center justify-center">0</span>
+                    </button>
+                    <!-- Dark Mode Toggle Desktop -->
+                    <button id="theme-toggle-desktop" class="p-2 text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors focus:ring-2 focus:ring-primary/20 focus:outline-none rounded-lg">
+                        <i data-lucide="moon" class="w-5 h-5 block dark:hidden"></i>
+                        <i data-lucide="sun" class="w-5 h-5 hidden dark:block"></i>
                     </button>
                 </li>
             </ul>
 
-            <!-- Mobile Menu Button -->
-            <button id="menu-toggle" class="md:hidden p-2 text-gray-600 hover:text-primary">
-                <i data-lucide="menu"></i>
-            </button>
+            <!-- Mobile Menu Buttons -->
+            <div class="md:hidden flex items-center space-x-2">
+                <!-- Dark Mode Toggle Mobile -->
+                <button id="theme-toggle-mobile" class="p-2 text-gray-600 dark:text-gray-300 hover:text-primary">
+                    <i data-lucide="moon" class="w-5 h-5 block dark:hidden"></i>
+                    <i data-lucide="sun" class="w-5 h-5 hidden dark:block"></i>
+                </button>
+                <button id="menu-toggle" class="p-2 text-gray-600 dark:text-gray-300 hover:text-primary">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
         </div>
 
         <!-- Mobile Menu Panel -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-4 py-6 space-y-4 shadow-lg absolute w-full left-0 z-40">
-            <a href="index.html" class="block text-gray-600 hover:text-primary font-medium">Home</a>
-            <a href="menu.html" class="block text-gray-600 hover:text-primary font-medium">Menu</a>
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-800 border-t border-gray-100 dark:border-gray-700 px-4 py-6 space-y-4 shadow-lg absolute w-full left-0 z-40 transition-colors duration-300">
+            <!-- Global Search Mobile -->
+            <form action="menu.html" method="GET" class="relative">
+                <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-400 w-4 h-4"></i>
+                <input type="text" name="search" placeholder="Search..." class="w-full pl-9 pr-4 py-2 text-sm rounded-lg bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-gray-100 border border-gray-200 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all">
+            </form>
+            <a href="index.html" class="block text-gray-600 dark:text-gray-300 hover:text-primary font-medium">Home</a>
+            <a href="menu.html" class="block text-gray-600 dark:text-gray-300 hover:text-primary font-medium">Menu</a>
             <a href="reservation.html" class="block text-primary font-medium">Reservation</a>
-            <a href="contact.html" class="block text-gray-600 hover:text-primary font-medium">Contact</a>
-            <div class="pt-4 border-t border-gray-50">
-                <a href="#" class="flex items-center space-x-2 text-gray-600">
+            <a href="contact.html" class="block text-gray-600 dark:text-gray-300 hover:text-primary font-medium">Contact</a>
+            <div class="pt-4 border-t border-gray-50 dark:border-gray-700">
+                <a href="#" class="flex items-center space-x-2 text-gray-600 dark:text-gray-300">
                     <i data-lucide="shopping-cart" class="w-5 h-5"></i>
                     <span>Cart (0)</span>
                 </a>
@@ -67,30 +98,35 @@
         </div>
     </nav>
 
-    <main id="main-content" class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div class="text-center mb-8">
-            <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-3">Reserve Your Table</h1>
-            <p class="text-lg text-gray-600">Book a table and enjoy an unforgettable dining experience</p>
+    <!-- Reservation Banner -->
+    <div class="relative w-full h-[300px] mb-12">
+        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwyfHxyZXN0YXVyYW50JTIwaW50ZXJpb3J8ZW58MHx8fHwxNjk5OTg1NzQxfDA&ixlib=rb-4.0.3&q=80&w=1080" alt="Restaurant Interior" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-black/50 flex flex-col items-center justify-center text-white p-4">
+            <h1 class="text-3xl md:text-5xl font-bold mb-4 text-center">Reserve Your Table</h1>
+            <p class="text-lg md:text-2xl opacity-90 text-center text-red-50">Book a table and enjoy an unforgettable dining experience</p>
         </div>
+    </div>
 
-        <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8">
+    <main id="main-content" class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 md:p-8 border border-gray-100 dark:border-gray-700">
             <form action="#" class="space-y-6">
                 <!-- Date and Time Section -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                        <label class="flex items-center text-sm font-medium text-gray-700 mb-2">
-                            <i data-lucide="calendar" class="h-4 w-4 mr-2 text-red-700"></i>
+                        <label class="flex items-center text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                            <i data-lucide="calendar" class="h-4 w-4 mr-2 text-red-700 dark:text-red-500"></i>
                             Date *
                         </label>
-                        <input type="date" required class="w-full px-4 py-2 rounded-lg border border-gray-200 focus:ring-2 focus:ring-red-500/10 focus:border-red-500 outline-none transition-all">
+                        <input type="date" required class="w-full px-4 py-2 rounded-lg border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-red-500/20 focus:border-red-500 outline-none transition-all">
                     </div>
 
                     <div>
-                        <label class="flex items-center text-sm font-medium text-gray-700 mb-2">
-                            <i data-lucide="clock" class="h-4 w-4 mr-2 text-red-700"></i>
+                        <label class="flex items-center text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                            <i data-lucide="clock" class="h-4 w-4 mr-2 text-red-700 dark:text-red-500"></i>
                             Time *
                         </label>
-                        <select required class="w-full px-4 py-2 rounded-lg border border-gray-200 focus:ring-2 focus:ring-red-500/10 focus:border-red-500 outline-none transition-all bg-white">
+                        <select required class="w-full px-4 py-2 rounded-lg border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-red-500/20 focus:border-red-500 outline-none transition-all">
                             <option value="" disabled selected>Select time</option>
                             <option>11:00 AM</option>
                             <option>11:30 AM</option>
@@ -114,11 +150,11 @@
 
                 <!-- Number of Guests -->
                 <div>
-                    <label class="flex items-center text-sm font-medium text-gray-700 mb-2">
-                        <i data-lucide="users" class="h-4 w-4 mr-2 text-red-700"></i>
+                    <label class="flex items-center text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                        <i data-lucide="users" class="h-4 w-4 mr-2 text-red-700 dark:text-red-500"></i>
                         Number of Guests *
                     </label>
-                    <select required class="w-full px-4 py-2 rounded-lg border border-gray-200 focus:ring-2 focus:ring-red-500/10 focus:border-red-500 outline-none transition-all bg-white">
+                    <select required class="w-full px-4 py-2 rounded-lg border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-red-500/20 focus:border-red-500 outline-none transition-all">
                         <option value="1">1 Guest</option>
                         <option value="2" selected>2 Guests</option>
                         <option value="3">3 Guests</option>
@@ -133,18 +169,18 @@
                 </div>
 
                 <!-- Contact Information -->
-                <div class="border-t border-gray-100 pt-6">
-                    <h3 class="text-lg font-semibold mb-4">Contact Information</h3>
+                <div class="border-t border-gray-100 dark:border-gray-700 pt-6">
+                    <h3 class="text-lg font-semibold mb-4 text-gray-900 dark:text-white">Contact Information</h3>
                     
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
-                            <label for="tw-full-name" class="block text-sm font-medium text-gray-700 mb-1">Full Name *</label>
-                            <input type="text" id="tw-full-name" placeholder="John Doe" required class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all">
+                            <label for="tw-full-name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Full Name *</label>
+                            <input type="text" id="tw-full-name" placeholder="John Doe" required class="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all">
                         </div>
 
                         <div>
-                            <label for="tw-phone-number" class="block text-sm font-medium text-gray-700 mb-1">Phone Number *</label>
-                            <input type="tel" id="tw-phone-number" placeholder="(555) 123-4567" required class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all">
+                            <label for="tw-phone-number" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Phone Number *</label>
+                            <input type="tel" id="tw-phone-number" placeholder="(555) 123-4567" required class="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all">
                         </div>
                     </div>
                 </div>
@@ -158,33 +194,44 @@
 
         <!-- Info Section -->
         <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-            <div class="bg-red-50 rounded-xl p-6">
-                <i data-lucide="calendar" class="h-10 w-10 text-red-700 mx-auto mb-4"></i>
-                <h4 class="font-bold mb-2">Flexible Booking</h4>
-                <p class="text-sm text-gray-600">Book up to 30 days in advance</p>
+            <div class="bg-red-50 dark:bg-red-900/5 rounded-xl p-6 border border-red-100 dark:border-red-900/20">
+                <i data-lucide="calendar" class="h-10 w-10 text-red-700 dark:text-red-500 mx-auto mb-4"></i>
+                <h4 class="font-bold mb-2 text-gray-900 dark:text-white">Flexible Booking</h4>
+                <p class="text-sm text-gray-600 dark:text-gray-400">Book up to 30 days in advance</p>
             </div>
-            <div class="bg-red-50 rounded-xl p-6">
-                <i data-lucide="clock" class="h-10 w-10 text-red-700 mx-auto mb-4"></i>
-                <h4 class="font-bold mb-2">Free Cancellation</h4>
-                <p class="text-sm text-gray-600">Cancel up to 2 hours before</p>
+            <div class="bg-red-50 dark:bg-red-900/5 rounded-xl p-6 border border-red-100 dark:border-red-900/20">
+                <i data-lucide="clock" class="h-10 w-10 text-red-700 dark:text-red-500 mx-auto mb-4"></i>
+                <h4 class="font-bold mb-2 text-gray-900 dark:text-white">Free Cancellation</h4>
+                <p class="text-sm text-gray-600 dark:text-gray-400">Cancel up to 2 hours before</p>
             </div>
-            <div class="bg-red-50 rounded-xl p-6">
-                <i data-lucide="users" class="h-10 w-10 text-red-700 mx-auto mb-4"></i>
-                <h4 class="font-bold mb-2">Group Friendly</h4>
-                <p class="text-sm text-gray-600">Tables for up to 10 guests</p>
+            <div class="bg-red-50 dark:bg-red-900/5 rounded-xl p-6 border border-red-100 dark:border-red-900/20">
+                <i data-lucide="users" class="h-10 w-10 text-red-700 dark:text-red-500 mx-auto mb-4"></i>
+                <h4 class="font-bold mb-2 text-gray-900 dark:text-white">Group Friendly</h4>
+                <p class="text-sm text-gray-600 dark:text-gray-400">Tables for up to 10 guests</p>
             </div>
         </div>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-16">
+    <footer class="bg-gray-900 text-white py-16 dark:border-t dark:border-gray-700">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-12">
             <div>
                 <a href="index.html" class="flex items-center space-x-2 text-2xl font-bold text-red-500 mb-6">
                     <i data-lucide="utensils-crossed"></i>
                     <span>ByteBites</span>
                 </a>
-                <p class="text-gray-400">Experience the finest culinary delights with fresh ingredients and authentic flavors.</p>
+                <p class="text-gray-400 mb-6">Experience the finest culinary delights with fresh ingredients and authentic flavors.</p>
+                <div class="flex space-x-4">
+                    <a href="#" class="w-10 h-10 bg-gray-800 hover:bg-primary text-gray-400 hover:text-white rounded-full flex items-center justify-center transition-colors">
+                        <i data-lucide="facebook" class="w-5 h-5"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 bg-gray-800 hover:bg-primary text-gray-400 hover:text-white rounded-full flex items-center justify-center transition-colors">
+                        <i data-lucide="twitter" class="w-5 h-5"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 bg-gray-800 hover:bg-primary text-gray-400 hover:text-white rounded-full flex items-center justify-center transition-colors">
+                        <i data-lucide="instagram" class="w-5 h-5"></i>
+                    </a>
+                </div>
             </div>
 
             <div>
@@ -213,6 +260,24 @@
 
     <script>
         lucide.createIcons();
+
+        // Dark mode logic
+        const themeToggleDesktop = document.getElementById('theme-toggle-desktop');
+        const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+
+        function toggleTheme() {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.theme = 'light';
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.theme = 'dark';
+            }
+            lucide.createIcons(); // Re-render correct icon
+        }
+
+        themeToggleDesktop?.addEventListener('click', toggleTheme);
+        themeToggleMobile?.addEventListener('click', toggleTheme);
 
         // Mobile menu toggle
         const menuToggle = document.getElementById('menu-toggle');
