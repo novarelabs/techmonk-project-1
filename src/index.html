@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aurelia Bistro</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="input.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <nav class="navbar">
+    <a href="#" class="logo-link">
+      <h1 class="logo">Aurelia Bistro</h1>
+    </a>
+    <ul class="nav-links desktop-only">
+      <li><a href="#about">About</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#reservation">Reservations</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#reservation" class="btn-book desktop-only">Book Now</a>
+    <button class="hamburger-btn mobile-only" onclick="toggleMobile()">☰</button>
+  </nav>
+  <div id="mobile-menu">
+    <a href="#about" onclick="toggleMobile()" class="footer-link">About</a>
+    <a href="#menu" onclick="toggleMobile()" class="footer-link">Menu</a>
+    <a href="#gallery" onclick="toggleMobile()" class="footer-link">Gallery</a>
+    <a href="#reservation" onclick="toggleMobile()" class="footer-link">Reservations</a>
+    <a href="#contact" onclick="toggleMobile()" class="footer-link">Contact</a>
+    <a href="#reservation" onclick="toggleMobile()" class="btn-book">Book Now</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <p class="hero-eyebrow">Fine Dining Experience</p>
+    <h2 class="hero-title">Where Luxury<br><em>Meets Flavor</em></h2>
+    <p class="hero-subtitle">Experience modern fine dining in an intimate, romantic atmosphere curated for the discerning palate.</p>
+    <div class="hero-buttons">
+      <a href="#menu" class="btn-primary">View Menu</a>
+      <a href="#reservation" class="btn-book" style="padding:12px 30px;">Reserve Now</a>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ABOUT -->
+<section id="about" class="section-wrapper">
+  <div class="section-inner--narrow">
+    <p class="section-eyebrow">Our Story</p>
+    <h2 class="section-title">About Aurelia Bistro</h2>
+    <div class="section-divider-line"></div>
+    <p class="about-body">Aurelia Bistro is a modern luxury dining destination where culinary artistry meets timeless elegance. Our chefs blend contemporary cooking techniques with classic flavors to create meals that are sophisticated and unforgettable.</p>
+    <p class="about-body">Located in the heart of the city, we welcome guests who appreciate quality food and refined dining moments worth remembering.</p>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- MENU -->
+<section id="menu" class="section-wrapper section-wrapper--alt">
+  <div class="section-inner">
+    <div class="section-header">
+      <p class="section-eyebrow">Culinary Art</p>
+      <h2 class="section-title">Signature Dishes</h2>
+      <div class="section-divider-line"></div>
+      <div class="menu-tabs">
+        <button class="btn-primary" style="padding:9px 22px;font-size:13px;">All</button>
+        <button class="btn-book" style="padding:9px 22px;font-size:13px;">Mains</button>
+        <button class="btn-book" style="padding:9px 22px;font-size:13px;">Desserts</button>
+        <button class="btn-book" style="padding:9px 22px;font-size:13px;">Drinks</button>
+      </div>
+    </div>
+    <div class="chef-special h-32 flex flex-col items-center justify-center">
+      <div class="absolute inset-0 bg-black/60 rounded-lg"></div>
+      <div class="relative z-10">
+        <p class="chef-special-eyebrow">Limited Offer</p>
+        <h3 class="chef-special-title">Chef's Special</h3>
+        <p class="chef-special-desc">Truffle Steak with Red Wine Reduction Sauce — Available This Week Only</p>
+      </div>
+    </div>
+    <div class="menu-grid">
+      <div class="photo-card">
+        <img src="../Assets/Images/borgovis-ai-generated-8121214.png" alt="Grilled Salmon" class="w-full h-32 object-cover object-center">
+        <div class="photo-card-body">
+          <h3 class="photo-card-title">Grilled Salmon</h3>
+          <p class="photo-card-desc">Fresh Atlantic salmon with lemon butter sauce.</p>
+          <p class="photo-card-price">$28</p>
+        </div>
+      </div>
+      <div class="photo-card">
+        <img src="../Assets/Images/vika-imperia550-meat-1155132.jpg" alt="Steak Royale" class="w-full h-32 object-cover object-center">
+        <div class="photo-card-body">
+          <h3 class="photo-card-title">Steak Royale</h3>
+          <p class="photo-card-desc">Premium sirloin steak with herb seasoning.</p>
+          <p class="photo-card-price">$35</p>
+        </div>
+      </div>
+      <div class="photo-card">
+        <img src="../Assets/Images/hoaluu-pasta-2589585.jpg" alt="Truffle Pasta" class="w-full h-32 object-cover object-center">
+        <div class="photo-card-body">
+          <h3 class="photo-card-title">Truffle Pasta</h3>
+          <p class="photo-card-desc">Creamy pasta infused with black truffle.</p>
+          <p class="photo-card-price">$24</p>
+        </div>
+      </div>
+      <div class="photo-card">
+        <img src="../Assets/Images/ritae-nougat-3078581.jpg" alt="Chocolate Soufflé" class="w-full h-32 object-cover object-center">
+        <div class="photo-card-body">
+          <h3 class="photo-card-title">Chocolate Soufflé</h3>
+          <p class="photo-card-desc">Rich chocolate dessert with vanilla glaze.</p>
+          <p class="photo-card-price">$14</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- GALLERY -->
+<section id="gallery" class="section-wrapper">
+  <div class="section-inner">
+    <div class="section-header">
+      <p class="section-eyebrow">Our Space</p>
+      <h2 class="section-title">A Glimpse Inside</h2>
+      <div class="section-divider-line"></div>
+    </div>
+    <div class="photo-scroll-container">
+      <div class="photo-scroll">
+        <div class="photo-card">
+          <img src="../Assets/Images/borgovis-ai-generated-8121214.png" alt="The Main Hall" class="w-full h-32 object-cover object-center">
+          <div class="gallery-card-label">
+            <p class="gallery-card-title">The Main Hall</p>
+            <p class="gallery-card-sub">An evening to remember</p>
+          </div>
+        </div>
+        <div class="photo-card">
+          <img src="../Assets/Images/vika-imperia550-meat-1155132.jpg" alt="Premium Cuts" class="w-full h-32 object-cover object-center">
+          <div class="gallery-card-label">
+            <p class="gallery-card-title">Premium Cuts</p>
+            <p class="gallery-card-sub">Sourced from the finest farms</p>
+          </div>
+        </div>
+        <div class="photo-card">
+          <img src="../Assets/Images/hoaluu-pasta-2589585.jpg" alt="Pasta Artistry" class="w-full h-32 object-cover object-center">
+          <div class="gallery-card-label">
+            <p class="gallery-card-title">Pasta Artistry</p>
+            <p class="gallery-card-sub">Made fresh daily</p>
+          </div>
+        </div>
+        <div class="photo-card">
+          <img src="../Assets/Images/ritae-nougat-3078581.jpg" alt="Dessert Corner" class="w-full h-32 object-cover object-center">
+          <div class="gallery-card-label">
+            <p class="gallery-card-title">Dessert Corner</p>
+            <p class="gallery-card-sub">Sweet endings await</p>
+          </div>
+        </div>
+        <div class="photo-card">
+          <img src="../Assets/Images/hoaluu-pasta-2589585.jpg" alt="Private Dining" class="w-full h-32 object-cover object-center">
+          <div class="gallery-card-label">
+            <p class="gallery-card-title">Private Dining</p>
+            <p class="gallery-card-sub">Intimate spaces for two</p>
+          </div>
+        </div>
+        <div class="photo-card">
+          <img src="../Assets/Images/vika-imperia550-meat-1155132.jpg" alt="Chef's Table" class="w-full h-32 object-cover object-center">
+          <div class="gallery-card-label">
+            <p class="gallery-card-title">Chef's Table</p>
+            <p class="gallery-card-sub">Watch the magic happen</p>
+          </div>
+        </div>
+        <div class="photo-card">
+          <img src="../Assets/Images/borgovis-ai-generated-8121214.png" alt="Wine Selection" class="w-full h-32 object-cover object-center">
+          <div class="gallery-card-label">
+            <p class="gallery-card-title">Wine Selection</p>
+            <p class="gallery-card-sub">Over 200 curated labels</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- TESTIMONIALS -->
+<section class="section-wrapper section-wrapper--alt">
+  <div class="section-header" style="padding:0 24px;">
+    <p class="section-eyebrow">Guest Reviews</p>
+    <h2 class="section-title">What Our Guests Say</h2>
+    <div class="section-divider-line"></div>
+  </div>
+  <div class="testimonials-overflow">
+    <div class="testimonial-track">
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          <div class="avatar">DK</div>
+          <div><p class="testimonial-name">Daniel K.</p><p class="testimonial-stars">★★★★★</p></div>
+        </div>
+        <p class="testimonial-quote">"Absolutely stunning atmosphere and incredible flavors. The truffle pasta was a revelation."</p>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          <div class="avatar" style="background:#9e7f4a;">SM</div>
+          <div><p class="testimonial-name">Sophia M.</p><p class="testimonial-stars">★★★★★</p></div>
+        </div>
+        <p class="testimonial-quote">"Perfect place for romantic dinners. We celebrated our anniversary here and it was magical."</p>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          <div class="avatar" style="background:#7a6040;">MT</div>
+          <div><p class="testimonial-name">Michael T.</p><p class="testimonial-stars">★★★★★</p></div>
+        </div>
+        <p class="testimonial-quote">"A five-star experience from start to finish. The service was impeccable and attentive."</p>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          <div class="avatar" style="background:#b8935a;">AL</div>
+          <div><p class="testimonial-name">Amelia L.</p><p class="testimonial-stars">★★★★★</p></div>
+        </div>
+        <p class="testimonial-quote">"The Steak Royale melted in my mouth. I have dined across Europe and this rivals the best."</p>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          <div class="avatar" style="background:#6a5030;">JR</div>
+          <div><p class="testimonial-name">James R.</p><p class="testimonial-stars">★★★★★</p></div>
+        </div>
+        <p class="testimonial-quote">"A hidden gem in the city. The chocolate soufflé alone is worth making a reservation for."</p>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          <div class="avatar" style="background:#a07840;">NC</div>
+          <div><p class="testimonial-name">Natalie C.</p><p class="testimonial-stars">★★★★★</p></div>
+        </div>
+        <p class="testimonial-quote">"Exceptional wine pairing suggestions from the sommelier. Every course was perfectly curated."</p>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          <div class="avatar" style="background:#8a6848;">EO</div>
+          <div><p class="testimonial-name">Ethan O.</p><p class="testimonial-stars">★★★★★</p></div>
+        </div>
+        <p class="testimonial-quote">"Brought clients here for a business dinner — everyone was impressed. We closed the deal!"</p>
+      </div>
+      <!-- Duplicate set for seamless loop -->
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          <div class="avatar">DK</div>
+          <div><p class="testimonial-name">Daniel K.</p><p class="testimonial-stars">★★★★★</p></div>
+        </div>
+        <p class="testimonial-quote">"Absolutely stunning atmosphere and incredible flavors. The truffle pasta was a revelation."</p>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          <div class="avatar" style="background:#9e7f4a;">SM</div>
+          <div><p class="testimonial-name">Sophia M.</p><p class="testimonial-stars">★★★★★</p></div>
+        </div>
+        <p class="testimonial-quote">"Perfect place for romantic dinners. We celebrated our anniversary here and it was magical."</p>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          <div class="avatar" style="background:#7a6040;">MT</div>
+          <div><p class="testimonial-name">Michael T.</p><p class="testimonial-stars">★★★★★</p></div>
+        </div>
+        <p class="testimonial-quote">"A five-star experience from start to finish. The service was impeccable and attentive."</p>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          <div class="avatar" style="background:#b8935a;">AL</div>
+          <div><p class="testimonial-name">Amelia L.</p><p class="testimonial-stars">★★★★★</p></div>
+        </div>
+        <p class="testimonial-quote">"The Steak Royale melted in my mouth. I have dined across Europe and this rivals the best."</p>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          <div class="avatar" style="background:#6a5030;">JR</div>
+          <div><p class="testimonial-name">James R.</p><p class="testimonial-stars">★★★★★</p></div>
+        </div>
+        <p class="testimonial-quote">"A hidden gem in the city. The chocolate soufflé alone is worth making a reservation for."</p>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          <div class="avatar" style="background:#a07840;">NC</div>
+          <div><p class="testimonial-name">Natalie C.</p><p class="testimonial-stars">★★★★★</p></div>
+        </div>
+        <p class="testimonial-quote">"Exceptional wine pairing suggestions from the sommelier. Every course was perfectly curated."</p>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          <div class="avatar" style="background:#8a6848;">EO</div>
+          <div><p class="testimonial-name">Ethan O.</p><p class="testimonial-stars">★★★★★</p></div>
+        </div>
+        <p class="testimonial-quote">"Brought clients here for a business dinner — everyone was impressed. We closed the deal!"</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- RESERVATION -->
+<section id="reservation" class="section-wrapper">
+  <div class="section-inner">
+    <div class="section-header">
+      <p class="section-eyebrow">Join Us</p>
+      <h2 class="section-title">Reserve Your Table</h2>
+      <div class="section-divider-line"></div>
+    </div>
+    <div class="reservation-layout">
+      <form class="res-form">
+        <input type="text" placeholder="Full Name" required class="res-input">
+        <input type="email" placeholder="Email Address" required class="res-input">
+        <input type="tel" placeholder="Phone Number" class="res-input">
+        <div class="res-form-row">
+          <input type="date" required class="res-input">
+          <input type="time" required class="res-input">
+        </div>
+        <input type="number" placeholder="Number of Guests" min="1" required class="res-input">
+        <textarea placeholder="Special Requests (Optional)" class="res-input" style="height:110px;resize:none;"></textarea>
+        <button type="submit" class="btn-primary" style="width:100%;padding:14px;font-size:15px;letter-spacing:0.05em;">Book Now</button>
+      </form>
+      <div>
+        <div class="res-info-card">
+          <h3 class="res-info-title">Visit Us</h3>
+          <div class="res-info-list">
+            <div class="res-info-item">
+              <span class="res-info-icon">📍</span>
+              <div>
+                <p class="res-info-label">Address</p>
+                <p class="res-info-value">123 City Avenue, Fine District<br>Lagos, Nigeria</p>
+              </div>
+            </div>
+            <div class="res-info-item">
+              <span class="res-info-icon">🕐</span>
+              <div>
+                <p class="res-info-label">Hours</p>
+                <p class="res-info-value">Mon – Thu: 6PM – 11PM<br>Fri – Sun: 5PM – 12AM</p>
+              </div>
+            </div>
+            <div class="res-info-item">
+              <span class="res-info-icon">📞</span>
+              <div>
+                <p class="res-info-label">Phone</p>
+                <p class="res-info-value">+234 800 000 0000</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="map-wrapper">
+          <iframe
+            id="map-embed"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=3.3792,6.5244,3.4192,6.5444&layer=mapnik&marker=6.5344,3.3992"
+            allowfullscreen
+            loading="lazy"
+            title="Aurelia Bistro Location">
+          </iframe>
+        </div>
+        <p class="map-link-row">
+          <a href="https://www.openstreetmap.org/?mlat=6.5344&mlon=3.3992#map=15/6.5344/3.3992" target="_blank">View larger map ↗</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- FOOTER -->
+<footer id="contact">
+  <div class="footer-inner">
+    <div class="footer-grid">
+
+      <div>
+        <h2 class="footer-brand-title">Aurelia Bistro</h2>
+        <p class="footer-brand-desc">Where luxury meets flavor. A modern fine dining destination for the discerning palate.</p>
+        <div class="social-icons">
+          <a href="#" class="social-icon" title="Instagram">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="#" class="social-icon" title="Facebook">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="#" class="social-icon" title="Twitter / X">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="#" class="social-icon" title="TikTok">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+          </a>
+          <a href="#" class="social-icon" title="WhatsApp">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-col-title">Quick Links</h4>
+        <ul class="footer-links-list">
+          <li><a href="#about" class="footer-link">About Us</a></li>
+          <li><a href="#menu" class="footer-link">Our Menu</a></li>
+          <li><a href="#gallery" class="footer-link">Gallery</a></li>
+          <li><a href="#reservation" class="footer-link">Reservations</a></li>
+          <li><a href="#contact" class="footer-link">Contact</a></li>
+          <li><a href="#" class="footer-link">Gift Cards</a></li>
+          <li><a href="#" class="footer-link">Private Events</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-col-title">Contact Us</h4>
+        <div class="footer-contact-list">
+          <p class="footer-contact-text">📍 123 City Avenue, Fine District<br>Lagos, Nigeria</p>
+          <p><a href="tel:+2348000000000" class="footer-link">📞 +234 800 000 0000</a></p>
+          <p><a href="mailto:hello@aureliabistro.com" class="footer-link">✉️ hello@aureliabistro.com</a></p>
+          <p class="footer-contact-text">🕐 Mon–Thu: 6PM – 11PM<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fri–Sun: 5PM – 12AM</p>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-col-title">Stay in Touch</h4>
+        <p class="newsletter-desc">Subscribe for exclusive offers, seasonal menus, and private event invitations.</p>
+        <form class="newsletter-form" onsubmit="return false;">
+          <input type="email" placeholder="Your email" class="newsletter-input">
+          <button type="submit" class="newsletter-btn">Subscribe</button>
+        </form>
+        <p class="newsletter-note">We respect your privacy. No spam, ever.</p>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copyright">© 2026 Aurelia Bistro. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="#" class="footer-link">Privacy Policy</a>
+        <a href="#" class="footer-link">Terms of Service</a>
+        <a href="#" class="footer-link">Cookie Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function toggleMobile() {
+    document.getElementById('mobile-menu').classList.toggle('open');
+  }
+</script>
+
+</body> 
